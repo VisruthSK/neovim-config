@@ -36,13 +36,13 @@ vim.keymap.set("n", "<leader>w", function()
 	vim.b.disable_autoformat = false
 end, { desc = "Save without formatting" })
 
+-- Toggles
 vim.keymap.set("n", "<leader>tm", "<cmd>Markview<cr>", {
 	desc = "Toggle Markdown preview",
 })
 
 vim.keymap.set("n", "<leader>td", function()
 	local enabled = not vim.diagnostic.is_enabled({ bufnr = 0 })
-
 	vim.diagnostic.enable(enabled, { bufnr = 0 })
 	vim.notify("Diagnostics " .. (enabled and "on" or "off"))
 end, { desc = "Toggle diagnostics" })
@@ -51,6 +51,10 @@ vim.keymap.set("n", "<leader>tf", function()
 	vim.b.disable_autoformat = not vim.b.disable_autoformat
 	vim.notify("Autoformat " .. (vim.b.disable_autoformat and "off" or "on"))
 end, { desc = "Toggle autoformat" })
+
+vim.keymap.set("n", "<leader>tn", "<cmd>NoNeckPain<CR>", {
+	desc = "Toggle narrow column",
+})
 
 vim.keymap.set("n", "<leader>?", function()
 	require("mini.extra").pickers.keymaps()

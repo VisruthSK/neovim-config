@@ -10,6 +10,7 @@ vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/OXY2DEV/markview.nvim" },
+	{ src = "https://github.com/shortcuts/no-neck-pain.nvim" },
 })
 vim.cmd("packadd nvim.undotree")
 
@@ -120,4 +121,8 @@ require("conform").setup({
 			},
 		},
 	},
+})
+
+require("no-neck-pain").setup({
+	width = 150,
 })

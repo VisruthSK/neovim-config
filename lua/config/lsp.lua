@@ -30,4 +30,5 @@ vim.lsp.enable({
 	"r_language_server",
 	"harper_ls",
 	"nu",
+	"tinymist",
 })

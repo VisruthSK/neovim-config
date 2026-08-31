@@ -1,6 +1,6 @@
 local ts = require("nvim-treesitter")
 
-ts.install({
+local filetypes = {
 	"lua",
 	"rust",
 	"python",
@@ -10,20 +10,13 @@ ts.install({
 	"yaml",
 	"toml",
 	"bash",
-})
+	"typst",
+}
+
+ts.install(filetypes)
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = {
-		"lua",
-		"rust",
-		"python",
-		"r",
-		"markdown",
-		"quarto",
-		"yaml",
-		"toml",
-		"bash",
-	},
+	pattern = filetypes,
 	callback = function()
 		vim.treesitter.start()
 	end,

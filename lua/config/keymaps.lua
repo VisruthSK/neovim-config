@@ -85,3 +85,7 @@ end, { desc = "Save without formatting" })
 vim.keymap.set({ "n", "x", "o" }, "<leader>j", function()
 	require("flash").jump()
 end, { desc = "Flash jump" })
+
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>update<CR>", {
+	desc = "Save",
+})

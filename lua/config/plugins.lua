@@ -89,6 +89,7 @@ require("conform").setup({
 		yaml = { "yamark" },
 		toml = { "taplo" },
 		r = { "air" },
+		typst = { "typstyle" },
 		python = { "ruff_format" },
 		quarto = { "injected" },
 	},

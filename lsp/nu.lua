@@ -1,9 +1,9 @@
 ---@type vim.lsp.Config
 return {
-  cmd = { "nu", "--lsp" },
-  filetypes = { "nu" },
+	cmd = { "nu", "--lsp" },
+	filetypes = { "nu" },
 
-  root_markers = {
-    ".git",
-  },
+	root_markers = {
+		".git",
+	},
 }

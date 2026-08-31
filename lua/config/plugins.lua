@@ -1,106 +1,106 @@
 vim.pack.add({
-  { src = "https://github.com/catppuccin/nvim" },
-  { src = "https://github.com/nvim-mini/mini.nvim" },
-  { src = "https://github.com/neovim/nvim-lspconfig" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-  { src = "https://github.com/jmbuhr/otter.nvim" },
-  { src = "https://github.com/quarto-dev/quarto-nvim" },
-  { src = "https://github.com/Julian/lean.nvim" },
-  { src = "https://github.com/saghen/blink.lib" },
-  { src = "https://github.com/saghen/blink.cmp" },
-  { src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/catppuccin/nvim" },
+	{ src = "https://github.com/nvim-mini/mini.nvim" },
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/jmbuhr/otter.nvim" },
+	{ src = "https://github.com/quarto-dev/quarto-nvim" },
+	{ src = "https://github.com/Julian/lean.nvim" },
+	{ src = "https://github.com/saghen/blink.lib" },
+	{ src = "https://github.com/saghen/blink.cmp" },
+	{ src = "https://github.com/stevearc/conform.nvim" },
 })
 vim.cmd("packadd nvim.undotree")
 
 require("catppuccin").setup({
-  flavour = "mocha",
+	flavour = "mocha",
 
-  color_overrides = {
-    mocha = {
-      base = "#000000",
-      mantle = "#080808",
-      crust = "#101010",
-    },
-  },
+	color_overrides = {
+		mocha = {
+			base = "#000000",
+			mantle = "#080808",
+			crust = "#101010",
+		},
+	},
 })
 vim.cmd.colorscheme("catppuccin-mocha")
 
 vim.g.lean_config = {
-  mappings = true,
+	mappings = true,
 }
 
 require("otter").setup()
 require("quarto").setup({
-  lspFeatures = {
-    enabled = true,
-    languages = { "r", "python", "julia", "bash" },
+	lspFeatures = {
+		enabled = true,
+		languages = { "r", "python", "julia", "bash" },
 
-    diagnostics = {
-      enabled = true,
-      triggers = { "BufWritePost" },
-    },
+		diagnostics = {
+			enabled = true,
+			triggers = { "BufWritePost" },
+		},
 
-    completion = {
-      enabled = true,
-    },
-  },
+		completion = {
+			enabled = true,
+		},
+	},
 })
 
 local cmp = require("blink.cmp")
 cmp.build():pwait()
 cmp.setup({
-  keymap = {
-    preset = "default",
-  },
+	keymap = {
+		preset = "default",
+	},
 
-  completion = {
-    menu = {
-      auto_show = false,
-    },
+	completion = {
+		menu = {
+			auto_show = false,
+		},
 
-    documentation = {
-      auto_show = false,
-    },
-  },
+		documentation = {
+			auto_show = false,
+		},
+	},
 
-  signature = {
-    enabled = false,
-  },
+	signature = {
+		enabled = false,
+	},
 
-  sources = {
-    default = { "lsp", "path" },
-  },
+	sources = {
+		default = { "lsp", "path" },
+	},
 })
 
-require("conform") .setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
-    yaml = { "yamark" },
-    toml = { "taplo" },
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		yaml = { "yamark" },
+		toml = { "taplo" },
 
-    r = { "air" },
-    python = { "ruff_format" },
+		r = { "air" },
+		python = { "ruff_format" },
 
-    quarto = { "injected" },
-  },
+		quarto = { "injected" },
+	},
 
-  formatters = {
-    yamark = {
-      command = "yamark",
-      args = {
-        "format",
-        "--stdin-file-path",
-        "$FILENAME",
-      },
-      stdin = true,
-    },
+	formatters = {
+		yamark = {
+			command = "yamark",
+			args = {
+				"format",
+				"--stdin-file-path",
+				"$FILENAME",
+			},
+			stdin = true,
+		},
 
-    injected = {
-      options = {
-        lang_to_formatters = {
-          yaml = {},
-        },
-      },
-    },
-  },
+		injected = {
+			options = {
+				lang_to_formatters = {
+					yaml = {},
+				},
+			},
+		},
+	},
 })

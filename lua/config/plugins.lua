@@ -79,7 +79,7 @@ cmp.setup({
 	},
 
 	sources = {
-		default = { "lsp", "path" },
+		default = { "lsp", "path", "buffer" },
 	},
 })
 

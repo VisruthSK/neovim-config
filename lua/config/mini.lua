@@ -2,6 +2,7 @@ require("mini.icons").setup()
 require("mini.pick").setup()
 require("mini.extra").setup()
 require("mini.files").setup()
+require("mini.visits").setup()
 
 require("mini.pairs").setup()
 require("mini.ai").setup()
@@ -21,9 +22,6 @@ miniclue.setup({
 		-- `[` and `]` keys
 		{ mode = "n", keys = "[" },
 		{ mode = "n", keys = "]" },
-
-		-- Built-in completion
-		{ mode = "i", keys = "<C-x>" },
 
 		-- `g` key
 		{ mode = { "n", "x" }, keys = "g" },
@@ -46,7 +44,6 @@ miniclue.setup({
 	clues = {
 		-- Enhance this by adding descriptions for <Leader> mapping groups
 		miniclue.gen_clues.square_brackets(),
-		miniclue.gen_clues.builtin_completion(),
 		miniclue.gen_clues.g(),
 		miniclue.gen_clues.marks(),
 		miniclue.gen_clues.registers(),

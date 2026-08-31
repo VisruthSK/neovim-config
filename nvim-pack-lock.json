@@ -16,9 +16,17 @@
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "flash.nvim": {
+      "rev": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
+      "src": "https://github.com/folke/flash.nvim"
+    },
     "lean.nvim": {
       "rev": "3d8027a96ada0fe43bdd01403e1bd4a09d175448",
       "src": "https://github.com/Julian/lean.nvim"
+    },
+    "leap.nvim": {
+      "rev": "64d35653c2a1ca6114ab0f89913022bc3b842316",
+      "src": "https://github.com/ggandor/leap.nvim"
     },
     "markview.nvim": {
       "rev": "5d9fc2aa6dd1c2fbdc7a68bc79b300e9967b21ff",

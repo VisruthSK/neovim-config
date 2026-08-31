@@ -11,6 +11,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/OXY2DEV/markview.nvim" },
 	{ src = "https://github.com/shortcuts/no-neck-pain.nvim" },
+	{ src = "https://github.com/folke/flash.nvim" },
 })
 vim.cmd("packadd nvim.undotree")
 
@@ -123,6 +124,10 @@ require("conform").setup({
 	},
 })
 
-require("no-neck-pain").setup({
-	width = 150,
+require("no-neck-pain").setup({ width = 150 })
+
+require("flash").setup({
+	jump = { autojump = true },
+	search = { multi_window = false },
+	modes = { char = { enabled = false } },
 })

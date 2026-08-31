@@ -75,3 +75,7 @@ vim.keymap.set("n", "<leader>w", function()
 	vim.cmd.write()
 	vim.b.disable_autoformat = false
 end, { desc = "Save without formatting" })
+
+vim.keymap.set({ "n", "x", "o" }, "<leader>j", function()
+	require("flash").jump()
+end, { desc = "Flash jump" })

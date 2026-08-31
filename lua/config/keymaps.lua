@@ -42,6 +42,9 @@ vim.keymap.set("n", "<leader>tn", "<cmd>NoNeckPain<CR>", {
 })
 
 -- Git
+vim.keymap.set("n", "<leader>go", function()
+	MiniDiff.toggle_overlay()
+end, { desc = "Git diff overlay" })
 
 vim.keymap.set({ "n", "x" }, "<leader>gs", function()
 	MiniGit.show_at_cursor()

@@ -28,7 +28,6 @@ vim.lsp.config("r_language_server", {
 vim.lsp.enable({
 	"rust_analyzer",
 	"r_language_server",
-	"air",
 	"harper_ls",
 	"nu",
 })

@@ -71,9 +71,15 @@ vim.keymap.set("n", "<leader>u", "<cmd>Undotree<CR>", {
 })
 
 vim.keymap.set("n", "<leader>w", function()
+	local was_disabled = vim.b.disable_autoformat
+
 	vim.b.disable_autoformat = true
-	vim.cmd.write()
-	vim.b.disable_autoformat = false
+	local ok, err = pcall(vim.cmd.write)
+	vim.b.disable_autoformat = was_disabled
+
+	if not ok then
+		vim.notify(err, vim.log.levels.ERROR)
+	end
 end, { desc = "Save without formatting" })
 
 vim.keymap.set({ "n", "x", "o" }, "<leader>j", function()

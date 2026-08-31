@@ -8,7 +8,11 @@ require("mini.pairs").setup()
 require("mini.ai").setup()
 require("mini.surround").setup()
 
-require("mini.diff").setup()
+require("mini.diff").setup({
+	view = {
+		style = "sign",
+	},
+})
 require("mini.git").setup()
 
 require("mini.statusline").setup()
@@ -42,7 +46,9 @@ miniclue.setup({
 	},
 
 	clues = {
-		-- Enhance this by adding descriptions for <Leader> mapping groups
+		{ mode = "n", keys = "<Leader>f", desc = "+Find" },
+		{ mode = "n", keys = "<Leader>t", desc = "+Toggle" },
+		{ mode = "n", keys = "<Leader>g", desc = "+Git" },
 		miniclue.gen_clues.square_brackets(),
 		miniclue.gen_clues.g(),
 		miniclue.gen_clues.marks(),

@@ -34,7 +34,9 @@ vim.keymap.set("n", "<leader>u", "<cmd>Undotree<CR>", {
   desc = "Undo tree",
 })
 
-vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format({ async = true })
-end, { desc = "Format buffer" })
+vim.keymap.set({ "n", "x" }, "<leader>f", function()
+  require("conform").format({
+    async = true,
+  })
+end, { desc = "Format" })
 

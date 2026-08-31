@@ -8,6 +8,7 @@ vim.pack.add({
   { src = "https://github.com/Julian/lean.nvim" },
   { src = "https://github.com/saghen/blink.lib" },
   { src = "https://github.com/saghen/blink.cmp" },
+  { src = "https://github.com/stevearc/conform.nvim" },
 })
 vim.cmd("packadd nvim.undotree")
 
@@ -71,3 +72,35 @@ cmp.setup({
   },
 })
 
+require("conform") .setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    yaml = { "yamark" },
+    toml = { "taplo" },
+
+    r = { "air" },
+    python = { "ruff_format" },
+
+    quarto = { "injected" },
+  },
+
+  formatters = {
+    yamark = {
+      command = "yamark",
+      args = {
+        "format",
+        "--stdin-file-path",
+        "$FILENAME",
+      },
+      stdin = true,
+    },
+
+    injected = {
+      options = {
+        lang_to_formatters = {
+          yaml = {},
+        },
+      },
+    },
+  },
+})

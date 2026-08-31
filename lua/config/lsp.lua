@@ -1,11 +1,11 @@
 vim.lsp.config("harper_ls", {
 	settings = {
 		["harper-ls"] = {
-			diagnosticSeverity = "warning",
-
+			diagnosticSeverity = "hint",
 			linters = {
 				Dashes = false,
 				NumericRangeEnDash = false,
+				LongSentences = false,
 			},
 		},
 	},

@@ -20,6 +20,10 @@
       "rev": "3d8027a96ada0fe43bdd01403e1bd4a09d175448",
       "src": "https://github.com/Julian/lean.nvim"
     },
+    "markview.nvim": {
+      "rev": "5d9fc2aa6dd1c2fbdc7a68bc79b300e9967b21ff",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
     "mini.nvim": {
       "rev": "a311ed247d527db9592bb434356badc705363746",
       "src": "https://github.com/nvim-mini/mini.nvim"

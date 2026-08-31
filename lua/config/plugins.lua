@@ -9,6 +9,7 @@ vim.pack.add({
 	{ src = "https://github.com/saghen/blink.lib" },
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/OXY2DEV/markview.nvim" },
 })
 vim.cmd("packadd nvim.undotree")
 
@@ -28,6 +29,14 @@ vim.cmd.colorscheme("catppuccin-mocha")
 vim.g.lean_config = {
 	mappings = true,
 }
+
+require("markview").setup({
+	preview = {
+		enable = true,
+		enable_hybrid_mode = true,
+		icon_provider = "mini",
+	},
+})
 
 require("otter").setup()
 require("quarto").setup({
@@ -77,12 +86,20 @@ require("conform").setup({
 		lua = { "stylua" },
 		yaml = { "yamark" },
 		toml = { "taplo" },
-
 		r = { "air" },
 		python = { "ruff_format" },
-
 		quarto = { "injected" },
 	},
+
+	format_on_save = function(bufnr)
+		if vim.b[bufnr].disable_autoformat then
+			return
+		end
+		return {
+			timeout_ms = 1000,
+			lsp_format = "fallback",
+		}
+	end,
 
 	formatters = {
 		yamark = {

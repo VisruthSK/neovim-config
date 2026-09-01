@@ -12,6 +12,8 @@ vim.pack.add({
 	{ src = "https://github.com/OXY2DEV/markview.nvim" },
 	{ src = "https://github.com/shortcuts/no-neck-pain.nvim" },
 	{ src = "https://github.com/folke/flash.nvim" },
+	{ src = "https://github.com/NicolasGB/jj.nvim" },
+	{ src = "https://tangled.org/ronshavit.com/mini.diff.jj" },
 })
 vim.cmd("packadd nvim.undotree")
 
@@ -132,3 +134,5 @@ require("flash").setup({
 	search = { multi_window = false },
 	modes = { char = { enabled = false } },
 })
+
+require("jj").setup({})

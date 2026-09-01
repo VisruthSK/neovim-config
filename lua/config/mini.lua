@@ -8,7 +8,13 @@ require("mini.pairs").setup()
 require("mini.ai").setup()
 require("mini.surround").setup()
 
-require("mini.diff").setup({
+local diff = require("mini.diff")
+
+diff.setup({
+	source = {
+		require("mini.diff.jj"),
+		diff.gen_source.git(),
+	},
 	view = {
 		style = "sign",
 	},

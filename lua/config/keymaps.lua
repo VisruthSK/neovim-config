@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>tn", "<cmd>NoNeckPain<CR>", {
 	desc = "Toggle narrow column",
 })
 
--- Git
+-- VCS
 vim.keymap.set("n", "<leader>go", function()
 	MiniDiff.toggle_overlay()
 end, { desc = "Git diff overlay" })
@@ -49,6 +49,10 @@ end, { desc = "Git diff overlay" })
 vim.keymap.set({ "n", "x" }, "<leader>gs", function()
 	MiniGit.show_at_cursor()
 end, { desc = "Git show at cursor" })
+
+vim.keymap.set("n", "<leader>j", "<cmd>J log<cr>", {
+	desc = "JJ log",
+})
 
 -- General
 
@@ -82,7 +86,7 @@ vim.keymap.set("n", "<leader>w", function()
 	end
 end, { desc = "Save without formatting" })
 
-vim.keymap.set({ "n", "x", "o" }, "<leader>j", function()
+vim.keymap.set({ "n", "x", "o" }, "<leader>s", function()
 	require("flash").jump()
 end, { desc = "Flash jump" })
 

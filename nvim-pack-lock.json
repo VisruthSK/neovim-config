@@ -28,10 +28,6 @@
       "rev": "3d8027a96ada0fe43bdd01403e1bd4a09d175448",
       "src": "https://github.com/Julian/lean.nvim"
     },
-    "markview.nvim": {
-      "rev": "5d9fc2aa6dd1c2fbdc7a68bc79b300e9967b21ff",
-      "src": "https://github.com/OXY2DEV/markview.nvim"
-    },
     "mini.diff.jj": {
       "rev": "0c43dea746088ce07c1c60f2b3c50e0aa7ff11c2",
       "src": "https://tangled.org/ronshavit.com/mini.diff.jj"

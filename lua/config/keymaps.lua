@@ -22,10 +22,6 @@ vim.keymap.set("n", "<leader>fr", function()
 end, { desc = "Recent files" })
 
 -- Toggles
-vim.keymap.set("n", "<leader>tm", "<cmd>Markview<cr>", {
-	desc = "Toggle Markdown preview",
-})
-
 vim.keymap.set("n", "<leader>td", function()
 	local enabled = not vim.diagnostic.is_enabled({ bufnr = 0 })
 	vim.diagnostic.enable(enabled, { bufnr = 0 })

@@ -89,3 +89,5 @@ end, { desc = "Flash jump" })
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>update<CR>", {
 	desc = "Save",
 })
+
+vim.keymap.set("i", "<C-Del>", "<C-o>dw", { desc = "Delete next word" })
